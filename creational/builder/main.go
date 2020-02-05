@@ -5,12 +5,12 @@ import "fmt"
 func main() {
 	samsungBuilder := getHPBuilder("samsung")
 	director := NewDirector(samsungBuilder)
-	samsungHP := director.Build()
+	samsungHP := director.BuildHP()
 
-	fmt.Println("samsung:", samsungHP.GetHP().merk, samsungHP.GetHP().country)
+	fmt.Println("samsung:", samsungHP.merk, samsungHP.country)
 
 	xiaomiBuilder := getHPBuilder("xiaomi")
 	director = NewDirector(xiaomiBuilder)
-	xiaomiHP := director.Build()
-	fmt.Println("xiaomi:", xiaomiHP.GetHP().merk, xiaomiHP.GetHP().country)
+	xiaomiHP := director.BuildHP()
+	fmt.Println("xiaomi:", xiaomiHP.merk, xiaomiHP.country)
 }
