@@ -7,4 +7,6 @@ func main() {
 	file1.print("   ")
 	file2.print("   ")
 	folder1.print("   ")
+	folder2 := &folder{name: "fol2", children: []inode{folder1, file1, file2}}
+	folder2.print("   ")
 }
