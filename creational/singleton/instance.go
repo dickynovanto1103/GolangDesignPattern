@@ -18,12 +18,11 @@ func getInstance() *instance {
 		if singleIns == nil {
 			fmt.Println("creating object")
 			singleIns = &instance{}
-			return singleIns
 		}
 		fmt.Println("singleIns has been created after acquiring lock")
-	} else {
-		fmt.Println("singleIns has been created before")
 	}
+
+	fmt.Println("singleIns has been created before")
 
 	return singleIns
 }
