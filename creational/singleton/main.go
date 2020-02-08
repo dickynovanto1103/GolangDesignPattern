@@ -7,4 +7,9 @@ func main() {
 		go getInstance()
 	}
 	fmt.Scanln()
+
+	for i := 0; i < 100; i++ {
+		go getInsOnceInstance()
+	}
+	fmt.Scanln()
 }
