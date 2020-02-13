@@ -1,4 +1,4 @@
-package train
+package main
 
 type Train interface{
 	RequestArrival()

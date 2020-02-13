@@ -1,12 +1,11 @@
-package train
+package main
 
 import (
-	"GolangDesignPattern/behavioural/mediator/mediator"
 	"fmt"
 )
 
 type GoodsTrain struct{
-	med mediator.Mediator
+	med Mediator
 }
 
 func (t *GoodsTrain) RequestArrival() {
@@ -14,6 +13,7 @@ func (t *GoodsTrain) RequestArrival() {
 
 	if !t.med.CanArrive(t) {
 		fmt.Println("goods train must wait")
+		return
 	}
 
 	fmt.Println("goods train can enter station")

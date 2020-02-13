@@ -1,22 +1,21 @@
-package mediator
+package main
 
 import (
-	"GolangDesignPattern/behavioural/mediator/train"
 	"fmt"
 )
 
 type StationManager struct {
 	IsStationFree bool
-	TrainQueue []train.Train
+	TrainQueue []Train
 }
 
-func (s *StationManager) CanArrive(train train.Train) bool {
+func (s *StationManager) CanArrive(train Train) bool {
 	if !s.IsStationFree {
 		fmt.Println("station is not free now")
 		return false
 	}
 	s.IsStationFree = false
-	AddTrain(train)
+	s.AddTrain(train)
 	fmt.Println("train added")
 	return true
 }
@@ -27,13 +26,13 @@ func (s *StationManager) NotifyFree() {
 		fmt.Println("no train queueing")
 		return
 	}
-	RemoveTrain()
+	s.RemoveTrain()
 }
 
-func AddTrain(train train.Train) {
+func (s *StationManager) AddTrain(train Train) {
 	s.TrainQueue = append(s.TrainQueue, train)
 }
 
-func RemoveTrain() {
+func (s *StationManager) RemoveTrain() {
 	s.TrainQueue = s.TrainQueue[1:]
 }
