@@ -16,6 +16,6 @@ func main() {
 
 	for idx := range listString {
 		memento := caretaker.getMemento(idx)
-		fmt.Printf("memento %v has state %v\n", idx, memento.getSavedState())
+		fmt.Printf("memento %v has state %v\n", idx, ori.restoreMemento(memento))
 	}
 }
