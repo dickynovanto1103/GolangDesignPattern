@@ -5,10 +5,12 @@ import "fmt"
 func main() {
 	caretaker := &caretaker{}
 	listString := []string{"a", "ab", "ac"}
+	ori := &Originator{}
 	for _, val := range listString {
-		ori := &Original{}
 		ori.setState(val)
+		fmt.Println("state of originator now:", ori.getState())
 		memento := ori.createMemento()
+		fmt.Println("crate memento of the originator")
 		caretaker.addMemento(memento)
 	}
 
