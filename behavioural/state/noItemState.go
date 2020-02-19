@@ -1,7 +1,16 @@
 package main
 
+import (
+	"errors"
+	"fmt"
+)
+
 type NoItemState struct {
 	VendingMachine *VendingMachine
+}
+
+func NewNoItemState(vendingMachine *VendingMachine) *NoItemState {
+	return &NoItemState{VendingMachine: vendingMachine}
 }
 
 func (s *NoItemState) RequestItem() error {
@@ -17,5 +26,6 @@ func (s *NoItemState) InsertMoney(money int) error {
 }
 
 func (s *NoItemState) DispenseItem() error {
-	panic("implement me")
+	fmt.Println("cannot dispense item as it is in no item state")
+	return errors.New("cannot dispense item in no item state")
 }

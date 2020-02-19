@@ -14,15 +14,11 @@ func NewVendingMachine(itemCount, itemPrice int) *VendingMachine {
 	}
 
 	if itemCount == 0 {
-		vendingMachine.CurrentState = &NoItemState{
-			VendingMachine: vendingMachine,
-		}
+		vendingMachine.CurrentState = NewNoItemState(vendingMachine)
 		return vendingMachine
 	}
 
-	vendingMachine.CurrentState = &HasItemState{
-		VendingMachine: vendingMachine,
-	}
+	vendingMachine.CurrentState = NewHasItemState(vendingMachine)
 	return vendingMachine
 }
 

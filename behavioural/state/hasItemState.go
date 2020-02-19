@@ -9,6 +9,10 @@ type HasItemState struct {
 	VendingMachine *VendingMachine
 }
 
+func NewHasItemState(vendingMachine *VendingMachine) *HasItemState {
+	return &HasItemState{VendingMachine: vendingMachine}
+}
+
 func (s *HasItemState) RequestItem() error {
 	if s.VendingMachine.ItemCount == 0 {
 		fmt.Println("item count == 0")
