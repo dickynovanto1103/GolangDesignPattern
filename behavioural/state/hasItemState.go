@@ -24,13 +24,24 @@ func (s *HasItemState) RequestItem() error {
 }
 
 func (s *HasItemState) AddItem(count int) error {
-	panic("implement me")
+	s.VendingMachine.AddItemCount(count)
+	return nil
 }
 
+//TODO: keep state of money stored
 func (s *HasItemState) InsertMoney(money int) error {
-	panic("implement me")
+	if s.VendingMachine.ItemPrice > money {
+		fmt.Printf("money is not enough, money: %v item Price: %v\n", money, s.VendingMachine.ItemPrice)
+		return errors.New("money is not enough, returning back money")
+	}
+	fmt.Println("success inserting money")
+	return nil
 }
 
 func (s *HasItemState) DispenseItem() error {
-	panic("implement me")
+	s.VendingMachine.ItemCount--
+	if s.VendingMachine.ItemCount == 0 {
+		s.VendingMachine.SetState(NewNoItemState(s.VendingMachine))
+	}
+	return nil
 }

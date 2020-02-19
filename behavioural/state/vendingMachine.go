@@ -29,6 +29,6 @@ func (v *VendingMachine) SetState(state State) {
 func (v *VendingMachine) AddItemCount(count int) {
 	v.ItemCount += count
 	if v.ItemCount > 0 {
-		v.SetState(&HasItemState{})
+		v.SetState(NewHasItemState(v))
 	}
 }

@@ -14,15 +14,18 @@ func NewNoItemState(vendingMachine *VendingMachine) *NoItemState {
 }
 
 func (s *NoItemState) RequestItem() error {
-	panic("implement me")
+	fmt.Println("cannot request item on no item state")
+	return errors.New("cannot request item on no item state")
 }
 
 func (s *NoItemState) AddItem(count int) error {
-	panic("implement me")
+	s.VendingMachine.AddItemCount(count)
+	return nil
 }
 
 func (s *NoItemState) InsertMoney(money int) error {
-	panic("implement me")
+	fmt.Println("there is no use inserting money here")
+	return errors.New("insert money fail in no item state")
 }
 
 func (s *NoItemState) DispenseItem() error {
