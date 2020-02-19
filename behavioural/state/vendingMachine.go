@@ -7,7 +7,7 @@ type VendingMachine struct {
 	CurrentState State
 }
 
-func newVendingMachine(itemCount, itemPrice int) *VendingMachine {
+func NewVendingMachine(itemCount, itemPrice int) *VendingMachine {
 	vendingMachine := &VendingMachine{
 		ItemCount:    itemCount,
 		ItemPrice:    itemPrice,
