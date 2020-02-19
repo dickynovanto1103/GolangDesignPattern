@@ -1,7 +1,7 @@
-package state
+package main
 
 type NoItemState struct {
-
+	VendingMachine *VendingMachine
 }
 
 func (s *NoItemState) RequestItem() error {

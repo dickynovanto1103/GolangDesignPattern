@@ -1,4 +1,4 @@
-package state
+package main
 
 type State interface {
 	RequestItem() error

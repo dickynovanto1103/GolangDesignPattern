@@ -1,11 +1,22 @@
-package state
+package main
+
+import (
+	"errors"
+	"fmt"
+)
 
 type HasItemState struct {
-
+	VendingMachine *VendingMachine
 }
 
 func (s *HasItemState) RequestItem() error {
-	panic("implement me")
+	if s.VendingMachine.ItemCount == 0 {
+		fmt.Println("item count == 0")
+		return errors.New("item count == 0")
+	}
+
+	fmt.Println("requesting item")
+	return nil
 }
 
 func (s *HasItemState) AddItem(count int) error {
