@@ -12,23 +12,15 @@ type otp struct{
 	interfaceOTP Iotp
 }
 
-func (o *otp) genRandomOTP(n int) string {
-	return o.interfaceOTP.genRandomOTP(n)
-}
-
-func (o *otp) saveOTPCache(val string) {
-	o.interfaceOTP.saveOTPCache(val)
-}
-
-func (o *otp) getMessage(msg string) string {
-	return o.interfaceOTP.getMessage(msg)
-}
-
-func (o *otp) sendNotification(notif string) error {
-	return o.interfaceOTP.sendNotification(notif)
-}
-
-func (o *otp) publishMetric() {
+func (o *otp) GenAndSendOTP(otpLength int) error {
+	otpGenerated := o.interfaceOTP.genRandomOTP(otpLength)
+	o.interfaceOTP.saveOTPCache(otpGenerated)
+	msg := o.interfaceOTP.getMessage(otpGenerated)
+	err := o.interfaceOTP.sendNotification(msg)
+	if err != nil {
+		return err
+	}
 	o.interfaceOTP.publishMetric()
+	return nil
 }
 

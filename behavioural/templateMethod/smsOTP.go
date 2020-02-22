@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 type SMSOTP struct{
+	otp
 }
 
 func (o *SMSOTP) genRandomOTP(n int) string {
