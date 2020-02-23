@@ -10,5 +10,4 @@ func main() {
 	email := &EmailOTP{}
 	otpService = &otp{interfaceOTP: email}
 	otpService.GenAndSendOTP(2)
-
 }
