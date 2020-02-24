@@ -1,4 +1,4 @@
-package main
+package computer
 
 type Computer interface{
 	InsertSquareUSB()

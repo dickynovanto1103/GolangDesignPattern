@@ -1,4 +1,4 @@
-package main
+package computer
 
 type WindowsAdapter struct{
 	windowsMachine *WindowsComputer
