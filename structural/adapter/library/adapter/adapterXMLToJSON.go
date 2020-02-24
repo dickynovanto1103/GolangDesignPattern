@@ -1,6 +1,7 @@
 package adapter
 
 import (
+	"GolangDesignPattern/structural/adapter/library/model"
 	"GolangDesignPattern/structural/adapter/library/service"
 )
 
@@ -12,11 +13,11 @@ func NewAdapterXMLToJSON(service *service.JSONRequestProcessor) *AdapterXMLToJSO
 	return &AdapterXMLToJSON{service:service}
 }
 
-func (adapter *AdapterXMLToJSON) Execute(xml *XML) {
+func (adapter *AdapterXMLToJSON) Execute(xml *model.XML) {
 	jsonRequest := convertXMLToJSON(xml)
 	adapter.service.ProcessRequest(jsonRequest)
 }
 
-func convertXMLToJSON(xml *XML) *service.JSON {
-	return service.NewJSONRequest(xml.field)
+func convertXMLToJSON(xml *model.XML) *model.JSON {
+	return model.NewJSONRequest(xml.GetField())
 }

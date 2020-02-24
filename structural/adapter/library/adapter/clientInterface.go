@@ -1,13 +1,7 @@
 package adapter
 
-type XML struct {
-	field string
-}
-
-func NewXMLRequest(field string) *XML {
-	return &XML{field:field}
-}
+import "GolangDesignPattern/structural/adapter/library/model"
 
 type ClientInterface interface {
-	Execute(xml XML)
+	Execute(xml *model.XML)
 }

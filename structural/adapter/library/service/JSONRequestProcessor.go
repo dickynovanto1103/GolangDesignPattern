@@ -1,20 +1,15 @@
 package service
 
-import "fmt"
-
-type JSON struct {
-	field string
-}
-
-func NewJSONRequest(field string) *JSON {
-	return &JSON{field: field}
-}
+import (
+	"GolangDesignPattern/structural/adapter/library/model"
+	"fmt"
+)
 
 type JSONRequestProcessor struct {
 
 }
 
-func (p *JSONRequestProcessor) ProcessRequest(request *JSON) {
+func (p *JSONRequestProcessor) ProcessRequest(request *model.JSON) {
 	fmt.Println("done processing request with request body:", request)
 }
 
