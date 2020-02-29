@@ -1,4 +1,4 @@
-package main
+package dress
 
 import (
 	"fmt"
@@ -18,7 +18,7 @@ const (
 	CTDress = "CounterTerroristDress"
 )
 
-func (factory *DressFactory) GetDress(dressType string) Dress{
+func (factory *DressFactory) GetDress(dressType string) Dress {
 	if factory.dressMap[dressType] != nil {
 		fmt.Println("found for dressType", dressType)
 		return factory.dressMap[dressType]

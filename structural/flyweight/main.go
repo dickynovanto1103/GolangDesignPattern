@@ -1,14 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"GolangDesignPattern/structural/flyweight/dress"
+	"fmt"
+)
 
 func main() {
 	game := &Game{}
-	game.AddPlayer(NewPlayer(TDress))
-	game.AddPlayer(NewPlayer(TDress))
+	game.AddPlayer(NewPlayer(dress.TDress))
+	game.AddPlayer(NewPlayer(dress.TDress))
 
-	game.AddPlayer(NewPlayer(CTDress))
-	game.AddPlayer(NewPlayer(CTDress))
+	game.AddPlayer(NewPlayer(dress.CTDress))
+	game.AddPlayer(NewPlayer(dress.CTDress))
 
 	players := game.GetPlayers()
 

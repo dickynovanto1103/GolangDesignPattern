@@ -1,4 +1,4 @@
-package main
+package dress
 
 type CounterTerroristDress struct {
 	color string
