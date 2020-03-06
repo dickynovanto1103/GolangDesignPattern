@@ -25,3 +25,14 @@ This repository contains list of design pattern implemented in Golang
             - We separate objects creation into separate place, so that the object creator only have 1 reason to change
         3. Open Closed Principle
             - We can easily add objects with its behaviour without changing the business logic code
+3. Builder
+    - Use this when:
+        1. We need flexibility in creating objects
+            - There are many parameters for creating an object and sometimes not all attribute is used.
+        2. We want to create multiple objects with the similar steps of creation.
+            - Builder interface provides steps of creating object, and director class guides the process of building it
+        3. Constructing Composite object (we can create recursive objects)
+    - Benefit:
+        1. Reuse builder interface to build several objects with similar steps
+        2. Build recursive objects
+        3. Single Responsibility Principle: we can isolate building objects and business logic
