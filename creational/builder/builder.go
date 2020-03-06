@@ -3,16 +3,20 @@ package main
 import "fmt"
 
 type HPBuilder interface{
+	Reset()
 	SetMerk()
 	SetCountry()
-	GetHP() *HP
 }
 
 func getHPBuilder(merk string) HPBuilder{
 	if merk == "samsung" {
-		return &Samsung{}
+		samsungBuilder := &SamsungBuilder{}
+		samsungBuilder.Reset()
+		return samsungBuilder
 	} else if merk == "xiaomi" {
-		return &Xiaomi{}
+		xiaomiBuilder := &XiaomiBuilder{}
+		xiaomiBuilder.Reset()
+		return xiaomiBuilder
 	} else {
 		fmt.Println("merk not available")
 		return nil

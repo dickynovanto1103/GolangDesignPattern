@@ -8,8 +8,7 @@ func NewDirector(builder HPBuilder) *Director {
 	return &Director{builder:builder}
 }
 
-func (d *Director) BuildHP() *HP {
+func (d *Director) BuildHP() {
 	d.builder.SetMerk()
 	d.builder.SetCountry()
-	return d.builder.GetHP()
 }
