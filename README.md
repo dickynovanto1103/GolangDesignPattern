@@ -1,6 +1,9 @@
 ### Golang Design Pattern
 
 This repository contains list of design pattern implemented in Golang
+Reference:
+1. https://refactoring.guru/design-patterns/
+2. https://golangbyexample.com/all-design-patterns-golang/
 
 #### Key Points
 #### Creational Design Pattern
@@ -36,3 +39,10 @@ This repository contains list of design pattern implemented in Golang
         1. Reuse builder interface to build several objects with similar steps
         2. Build recursive objects
         3. Single Responsibility Principle: we can isolate building objects and business logic
+4. Prototype
+    - Use this when:
+        1. We need to have a copy for an object, and copying a complex object will be such a hassle
+        2. We need a copy for the object but it only exposes method for copying it through an interface. And also, the object doesn't expose all the attributes
+    - Benefit:
+        1. We can clone objects without depending to the concrete object class (copying through an interface)
+        2. We can copy complex objects easily 
