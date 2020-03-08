@@ -46,3 +46,16 @@ Reference:
     - Benefit:
         1. We can clone objects without depending to the concrete object class (copying through an interface)
         2. We can copy complex objects easily 
+5. Singleton
+    - Use this when:
+        1. We want an object to be used in many part of the code.
+        2. We want to have stricter control over global variable
+            - The only one who can create / access the variable is the singleton class itself
+    - Disadvantage:
+        1. Violate single responsibility principle.
+            - The code now depends on singleton class and if the singleton class and the business logic change, we have more than 1 reason to change the class.
+        2. Hard to unit test since we depend on the singleton
+            - solution: Maybe we can find way to mock it or just don't use this pattern
+        3. Requires extra attention to multithreading programming such that the object is guaranteed only created once
+        4. The part of code know to much about the other code. Bad design in general 
+        
