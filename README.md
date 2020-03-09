@@ -58,4 +58,18 @@ Reference:
             - solution: Maybe we can find way to mock it or just don't use this pattern
         3. Requires extra attention to multithreading programming such that the object is guaranteed only created once
         4. The part of code know to much about the other code. Bad design in general 
-        
+
+#### Behavioural Design Pattern
+1. Chain of Responsibility
+    - Use this when:
+        1. We want to have several actions and it's too big to be handled in one handler
+            - In this process we can do it step by step, asking each handler whether they are responsible to do it, or the other handler's job
+        2. We want to execute several handler in a certain order
+        3. We want to dynamically set the handler order
+    - Benefit:
+        1. We can control the order of the handler
+        2. Single Responsibility Principle
+            - Previously, the request is handled in a big handler, and if we separate the handler into separate handlers, then each handler will only change if there is only 1 reason to change.
+        3. Open Closed Principle
+            - We can introduce new handler into the code without breaking the application / changing the business logic.
+   
