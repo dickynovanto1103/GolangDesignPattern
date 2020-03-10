@@ -72,4 +72,12 @@ Reference:
             - Previously, the request is handled in a big handler, and if we separate the handler into separate handlers, then each handler will only change if there is only 1 reason to change.
         3. Open Closed Principle
             - We can introduce new handler into the code without breaking the application / changing the business logic.
-   
+2. Command
+    - We should use this:
+        1. We should separate concern of handling request and show something in frontend
+            - Showing something is the job of frontend code, and handling request must be processed in backend, and any request must go through 1 router, and it will route to specific interface implementation to handle the request.
+    - Benefit:
+        1. Single Responsibility Principle
+            - We can create each request handler and each request handler only change on 1 reason only
+        2. Open Closed Principle
+            - We can easily add command implementation without changing main business logic code.
