@@ -81,3 +81,14 @@ Reference:
             - We can create each request handler and each request handler only change on 1 reason only
         2. Open Closed Principle
             - We can easily add command implementation without changing main business logic code.
+3. Iterator
+    - Use this when:
+        1. We want to traverse a data structure and the data structure is unknown beforehand
+        2. We want to traverse data structure easily and we want to hide the data structure and its complexity from client
+    - Benefit:
+        1. Open Closed Principle
+            - We can add another data structure and its iterator without changing the business logic code
+        2. Single Responsibility Principle
+            - For each data structure, the way to traverse the data structure is different. Even the same data structure can be iterated differently (tree, DFS & BFS).
+            - Therefore, it's better to create iteration logic in a separate class and it will only change on 1 reason.
+        3. We can iterate many data structures in parallel since each iterator has it's own state 
