@@ -91,4 +91,19 @@ Reference:
         2. Single Responsibility Principle
             - For each data structure, the way to traverse the data structure is different. Even the same data structure can be iterated differently (tree, DFS & BFS).
             - Therefore, it's better to create iteration logic in a separate class and it will only change on 1 reason.
-        3. We can iterate many data structures in parallel since each iterator has it's own state 
+        3. We can iterate many data structures in parallel since each iterator has it's own state
+4. Mediator
+    - Use this when:
+        1. There are a lot of components that are dependant to each other. This condition makes the component hard to reuse
+            - Example: checkbox in form if checked must tell text field to fill dogs name. Checkbox is dependant to text field. 
+        2. It's hard to change a class because the class is tightly coupled to the other classes.
+            - Change to this class might also means that we need to change the other classes that we are depending.
+    - Benefit:
+        1. Open Closed Principle
+            - When we add another component and it needs different handler for action into the component, we can just add another mediator class.
+        2. Single Responsibility Principle
+            - We can move the communication between components into single place in mediator class
+        3. We can reduce coupling between components.
+        4. More component reuse
+    - Disadvantage:
+        1. It can become a God Class, controlling everything
