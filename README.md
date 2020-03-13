@@ -107,3 +107,11 @@ Reference:
         4. More component reuse
     - Disadvantage:
         1. It can become a God Class, controlling everything
+5. Memento
+    - Use this when:
+        1. You want to add undo / redo operation in your application
+    - Benefit:
+        1. We can produce snapshot without breaking encapsulation
+    - Disadvantage:
+        1. Big RAM usage when we need to store all the history
+        2. Extra care for garbage collection when we want to discard old memento
