@@ -115,3 +115,10 @@ Reference:
     - Disadvantage:
         1. Big RAM usage when we need to store all the history
         2. Extra care for garbage collection when we want to discard old memento
+6. Observer
+    - Use this when:
+        1. We want to have pub-sub look alike application. The subscriber list is dynamic, some subscribers sometimes only last for a particular time.
+    - Benefit:
+        1. Open Closed Principle
+            - We can add another subscribers without changing the business logic code.
+       
