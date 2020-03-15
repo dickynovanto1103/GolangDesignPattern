@@ -121,4 +121,14 @@ Reference:
     - Benefit:
         1. Open Closed Principle
             - We can add another subscribers without changing the business logic code.
-       
+7. State
+    - Use this when:
+        1. We want to implement objects that has behaviour depending on its state.
+    - Benefit:
+        1. Single Responsibility Principle
+            - Since we have each state in a different class, then it will only have 1 reason to change
+        2. Open Closed Principle
+            - We can add another state class without changing the business logic code.
+        3. We can eliminate many state conditionals (many if(s))
+    - Disadvantage:
+        1. It can be overkill if the state of an object is just a few
