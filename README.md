@@ -132,3 +132,11 @@ Reference:
         3. We can eliminate many state conditionals (many if(s))
     - Disadvantage:
         1. It can be overkill if the state of an object is just a few
+8. Strategy
+    - Use this when:
+        1. We encounter some similar classes with the difference is just the way the class behave.
+        2. We are relying to much to conditional statements of almost similar code of different behaviours.
+    - Benefit:
+        1. Open Closed Principle
+            - We can easily add more strategies without changing the business logic code.
+        2. We can separate business logic code from algorithm implementation details
